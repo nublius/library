@@ -4,7 +4,7 @@ function Book() {
 
 };
 
-function addBookToLibrary() {
+function Book() {
     if (!new.target) {
         throw Error("You must use the 'new' operator to call the constructor.");
     };
@@ -14,3 +14,9 @@ function addBookToLibrary() {
     this.readOrNot = readOrNot;
     this.id = crypto.randomUUID();
 };
+
+function addBookToLibrary(title, author, pages, readOrNot) {
+   const book = new Book(title, author, pages, readOrNot);
+
+   myLibrary.push(book);
+}
