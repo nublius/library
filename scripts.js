@@ -20,3 +20,13 @@ function addBookToLibrary(title, author, pages, readOrNot) {
 
    myLibrary.push(book);
 }
+
+addBookToLibrary("Yep", "Me", 100, true);
+
+addBookToLibrary("Yep2", "me2", 200, false);
+
+addBookToLibrary("Yep3", "me3", 300, true);
+
+function listBooks() {
+    console.table(myLibrary);
+};
