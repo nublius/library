@@ -21,12 +21,6 @@ function addBookToLibrary(title, author, pages, readOrNot) {
    myLibrary.push(book);
 };
 
-addBookToLibrary("Yep", "Me", 100, true);
-
-addBookToLibrary("Yep2", "me2", 200, false);
-
-addBookToLibrary("Yep3", "me3", 300, true);
-
 function loadBook(book) {
     const newArticle = document.createElement("div");
     newArticle.className = "article__container";
@@ -86,3 +80,9 @@ function loadAllBooks() {
 window.addEventListener("load", (event) => {
     loadAllBooks();
 });
+
+addBookToLibrary("Yep", "Me", 100, true);
+
+addBookToLibrary("Yep2", "me2", 200, false);
+
+addBookToLibrary("Yep3", "me3", 300, true);

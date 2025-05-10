@@ -39,6 +39,9 @@
     border-radius: 5px;
     outline: 1px solid #b2aa94;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .header__container {
@@ -54,12 +57,14 @@
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+    align-self: flex-start;
 }
 
 button {
     background-color: #b2aa94 ;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 }
 
 .body__container {
@@ -72,7 +77,7 @@ button {
     gap: 10px;
     padding: 10px;
     flex-direction: column;
-    height: 240px;
+    height: auto;
 }
 
 .icon {
@@ -83,13 +88,15 @@ button {
 .books__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(200px,240px);
     gap: 10px;
     height: 100%;
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #d6c79a #2d2520;
     outline: 1px solid #b2aa94;
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 10px;
 }
 
 .books__container > .article__container:nth-last-child(1):nth-child(odd) {
