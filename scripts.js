@@ -21,13 +21,16 @@ function addBookToLibrary(title, author, pages, readOrNot) {
    myLibrary.push(book);
 };
 
+addBookToLibrary("Yep", "Me", 100, true);
+
+addBookToLibrary("Yep2", "me2", 200, false);
+
+addBookToLibrary("Yep3", "me3", 300, true);
+
 function loadBook(book) {
     const newArticle = document.createElement("div");
     newArticle.className = "article__container";
-
-    const newArticleID = document.createElement("data-id");
-    newArticleID.textContent = book.id;
-    newArticle.append(newArticleID);
+    newArticle.id = book.id;
 
     const newArticleInfo = document.createElement("div");
     newArticleInfo.className = "article__info";
@@ -69,6 +72,14 @@ function loadBook(book) {
     newArticleDelete.append(deleteIcon);
     newArticleOptions.append(newArticleDelete);
 
+    newArticleDelete.addEventListener("click", () => {
+        const index = findBook(book.id);
+        if (index > -1) {
+            removeBook(index);
+            document.getElementById(book.id).remove();
+        }
+    })
+
     newArticle.append(newArticleOptions);
 
     const booksContainer = document.querySelector(".books__container");
@@ -85,8 +96,8 @@ window.addEventListener("load", (event) => {
     loadAllBooks();
 });
 
-function findBook(title) {
-    return (myLibrary.findIndex(obj => obj.title === title));
+function findBook(id) {
+    return (myLibrary.findIndex(obj => obj.id == id));
 };
 
 function removeBook(index) {
@@ -95,10 +106,8 @@ function removeBook(index) {
     };
 };
 
-addBookToLibrary("Yep", "Me", 100, true);
+function addBookPopUp() {
 
-addBookToLibrary("Yep2", "me2", 200, false);
-
-addBookToLibrary("Yep3", "me3", 300, true);
+}
 
 

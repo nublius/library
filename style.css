@@ -53,7 +53,7 @@
     border-radius: 5px;
 }
 
-.body__add {
+#add__button {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
@@ -112,4 +112,17 @@ ul {
 .article__options {
     align-self: flex-end;
     margin-top: auto;
+}
+
+#popup-bg {
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
