@@ -51,7 +51,7 @@ function loadBook(book) {
     newArticleList.append(newArticlePageCount);
 
     const newArticleReadOrNot = document.createElement("li");
-    if (book.readorNot == true) {
+    if (book.readOrNot == true) {
         newArticleReadOrNot.textContent = "Read";
     } else {
         newArticleReadOrNot.textContent = "Not read";
