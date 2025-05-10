@@ -47,7 +47,7 @@ function loadBook(book) {
     newArticleList.append(newArticleAuthor);
 
     const newArticlePageCount = document.createElement("li");
-    newArticlePageCount.textContent = book.pages;
+    newArticlePageCount.textContent = book.pages + " pages";
     newArticleList.append(newArticlePageCount);
 
     const newArticleReadOrNot = document.createElement("li");
