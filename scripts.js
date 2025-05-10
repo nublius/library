@@ -29,14 +29,53 @@ addBookToLibrary("Yep3", "me3", 300, true);
 
 function loadBook(book) {
     const newArticle = document.createElement("div");
-    newArticle.class = "article__container";
+    newArticle.className = "article__container";
 
     const newArticleInfo = document.createElement("div");
-    newArticleInfo.class = "article__info";
+    newArticleInfo.className = "article__info";
     newArticle.append(newArticleInfo);
 
     const newArticleTitle = document.createElement("h2");
-    newArticleTitle.class = "article__title";
+    newArticleTitle.className = "article__title";
     newArticleTitle.textContent = book.title;
     newArticleInfo.append(newArticleTitle);
+
+    const newArticleList = document.createElement("ul");
+
+    const newArticleAuthor = document.createElement("li");
+    newArticleAuthor.textContent = "by " + book.author;
+    newArticleList.append(newArticleAuthor);
+
+    const newArticlePageCount = document.createElement("li");
+    newArticlePageCount.textContent = book.pages;
+    newArticleList.append(newArticlePageCount);
+
+    const newArticleReadOrNot = document.createElement("li");
+    if (book.readorNot == true) {
+        newArticleReadOrNot.textContent = "Read";
+    } else {
+        newArticleReadOrNot.textContent = "Not read";
+    }
+    newArticleList.append(newArticleReadOrNot);
+
+    newArticleInfo.append(newArticleList);
+
+    const newArticleOptions = document.createElement("div");
+    newArticleOptions.className = "article__options";
+
+    const newArticleDelete = document.createElement("button");
+    newArticleDelete.className = "article__delete";
+    newArticleDelete.textContent = "Delete";
+    newArticleOptions.append(newArticleDelete);
+
+    newArticle.append(newArticleOptions);
+
+    const booksContainer = document.querySelector(".books__container");
+    booksContainer.append(newArticle);
+};
+
+function loadAllBooks() {
+    for (let i = 0; i < myLibrary.length; i++) {
+        loadBook(myLibrary[i]);
+    }
 };
