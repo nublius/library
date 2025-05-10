@@ -83,6 +83,7 @@ button {
 .icon {
     width: 1.5rem;
     height: 1.5rem;
+    fill: #1b1612;
 }
 
 .books__container {
@@ -96,7 +97,6 @@ button {
     outline: 1px solid #b2aa94;
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 10px;
 }
 
 .books__container > .article__container:nth-last-child(1):nth-child(odd) {

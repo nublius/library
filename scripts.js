@@ -81,8 +81,20 @@ window.addEventListener("load", (event) => {
     loadAllBooks();
 });
 
+function findBook(title) {
+    return (myLibrary.findIndex(obj => obj.title === title));
+};
+
+function removeBook(index) {
+    if (index > -1) {
+        myLibrary.splice(index, 1);
+    };
+};
+
 addBookToLibrary("Yep", "Me", 100, true);
 
 addBookToLibrary("Yep2", "me2", 200, false);
 
 addBookToLibrary("Yep3", "me3", 300, true);
+
+
