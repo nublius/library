@@ -19,7 +19,7 @@ function addBookToLibrary(title, author, pages, readOrNot) {
    const book = new Book(title, author, pages, readOrNot);
 
    myLibrary.push(book);
-}
+};
 
 addBookToLibrary("Yep", "Me", 100, true);
 
@@ -27,6 +27,16 @@ addBookToLibrary("Yep2", "me2", 200, false);
 
 addBookToLibrary("Yep3", "me3", 300, true);
 
-function listBooks() {
-    console.table(myLibrary);
+function loadBook(book) {
+    const newArticle = document.createElement("div");
+    newArticle.class = "article__container";
+
+    const newArticleInfo = document.createElement("div");
+    newArticleInfo.class = "article__info";
+    newArticle.append(newArticleInfo);
+
+    const newArticleTitle = document.createElement("h2");
+    newArticleTitle.class = "article__title";
+    newArticleTitle.textContent = book.title;
+    newArticleInfo.append(newArticleTitle);
 };
