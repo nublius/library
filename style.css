@@ -18,9 +18,11 @@ body {
 .main__container {
     width: 50vw;
     max-width: 150000px;
-    background-color: blue;
+    background-color: gray;
     height: 95vh;
     max-height: 1800px;
+    border-radius: 5px;
+    outline: 1px solid black;
 }
 
 .header__container {
@@ -28,4 +30,14 @@ body {
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    outline: 1px solid black;
+    border-radius: 5px;
+}
+
+.article__container {
+    display: grid;
+}
+
+ul {
+    list-style: none;
 }
