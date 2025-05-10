@@ -114,7 +114,7 @@ ul {
     margin-top: auto;
 }
 
-#popup-bg {
+#popup__bg {
     position: fixed;
     display: none;
     height: 100%;
