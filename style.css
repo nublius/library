@@ -3,3 +3,16 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url("images/wallpaper2.jpg"); */
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+img {
+    width: 100vw;
+    height: 100vh;
+}
