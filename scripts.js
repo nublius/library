@@ -25,6 +25,10 @@ function loadBook(book) {
     const newArticle = document.createElement("div");
     newArticle.className = "article__container";
 
+    const newArticleID = document.createElement("data-id");
+    newArticleID.textContent = book.id;
+    newArticle.append(newArticleID);
+
     const newArticleInfo = document.createElement("div");
     newArticleInfo.className = "article__info";
     newArticle.append(newArticleInfo);
