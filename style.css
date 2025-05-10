@@ -53,6 +53,13 @@
 .body__add {
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+button {
+    background-color: #b2aa94 ;
+    border-radius: 5px;
+    border: none;
 }
 
 .article__container {
@@ -61,6 +68,11 @@
     gap: 10px;
     padding: 10px;
     flex-direction: column;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .books__container {

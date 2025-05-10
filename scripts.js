@@ -65,7 +65,10 @@ function loadBook(book) {
 
     const newArticleDelete = document.createElement("button");
     newArticleDelete.className = "article__delete";
-    newArticleDelete.textContent = "Delete";
+    const deleteIcon = document.createElement("img");
+    deleteIcon.className = "icon";
+    deleteIcon.src = "images/delete.svg";
+    newArticleDelete.append(deleteIcon);
     newArticleOptions.append(newArticleDelete);
 
     newArticle.append(newArticleOptions);
