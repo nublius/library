@@ -79,3 +79,7 @@ function loadAllBooks() {
         loadBook(myLibrary[i]);
     }
 };
+
+window.addEventListener("load", (event) => {
+    loadAllBooks();
+});

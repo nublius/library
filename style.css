@@ -1,24 +1,25 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    width: 100vw;
-    height: 100vh;
-    /* background-image: url("images/wallpaper2.jpg"); */
-    background-size:cover;
-    background-repeat: no-repeat;
+ }
+  
+  body {
+    height: 100%;
+    width: 100%;
+    background-image: url("images/wallpaper2.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .main__container {
     width: 50vw;
     max-width: 150000px;
-    background-color: gray;
+    background-color: #1b1612;
     height: 95vh;
     max-height: 1800px;
     border-radius: 5px;
