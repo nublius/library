@@ -14,6 +14,7 @@
     position: relative;
     overflow: hidden;
     color: #b2aa94;
+    font-family: 'Cinzel', 'Georgia', serif;
  }
   
  body::before {
