@@ -113,3 +113,7 @@ ul {
     align-self: flex-end;
     margin-top: auto;
 }
+
+dialog::backdrop {
+    background-color:rgba(0, 0, 0, 0.7);
+}

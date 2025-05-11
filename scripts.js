@@ -111,3 +111,15 @@ function removeBook(index) {
         myLibrary.splice(index, 1);
     };
 };
+
+const addDialog = document.querySelector("dialog");
+const addButton = document.querySelector("#add__button");
+const closeDialog = document.querySelector("#close__dialog");
+
+addButton.addEventListener("click", () => {
+    addDialog.showModal();
+});
+
+closeDialog.addEventListener("click", () => {
+    addDialog.close();
+});
