@@ -105,16 +105,3 @@ function removeBook(index) {
         myLibrary.splice(index, 1);
     };
 };
-
-function addBookPopUp() {
-
-}
-
-const popUp = document.querySelector("#popup__bg");
-const addButton = document.querySelector("#add__button");
-
-addButton.addEventListener("click", () => {
-    popUp.style.display = "block";
-})
-
-
