@@ -114,6 +114,11 @@ ul {
     margin-top: auto;
 }
 
+dialog {
+    top: 50%;
+    left: 50%;
+}
+
 dialog::backdrop {
     background-color:rgba(0, 0, 0, 0.7);
 }
