@@ -148,9 +148,26 @@ dialog::backdrop {
 fieldset {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    border: 2px solid #b2aa94;
 }
 
 legend {
     font-weight: bold;
     font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+.form__input {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+input[type="text"], input[type="number"] {
+    background-color: #E3DDCA;
 }
