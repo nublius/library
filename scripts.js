@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+// Book constructor
+
 function Book(title, author, pages, readOrNot) {
     if (!new.target) {
         throw Error("You must use the 'new' operator to call the constructor.");
@@ -10,6 +12,8 @@ function Book(title, author, pages, readOrNot) {
     this.readOrNot = readOrNot;
     this.id = crypto.randomUUID();
 };
+
+// Add book to myLibrary array
 
 function addBookToLibrary(title, author, pages, readOrNot) {
    const book = new Book(title, author, pages, readOrNot);
@@ -22,6 +26,8 @@ addBookToLibrary("Yep", "Me", 100, true);
 addBookToLibrary("Yep2", "me2", 200, false);
 
 addBookToLibrary("Yep3", "me3", 300, true);
+
+// Load book to DOM
 
 function loadBook(book) {
     const newArticle = document.createElement("div");
@@ -74,6 +80,8 @@ function loadBook(book) {
     newArticleOptions.append(newArticleDelete);
 
 
+    // Delete book event listener
+
     newArticleDelete.addEventListener("click", () => {
         const index = findBook(book.id);
         if (index > -1) {
@@ -94,6 +102,8 @@ function loadAllBooks() {
     }
 };
 
+// Load books on page load
+
 window.addEventListener("load", (event) => {
     loadAllBooks();
 });
@@ -102,11 +112,15 @@ function findBook(id) {
     return (myLibrary.findIndex(obj => obj.id == id));
 };
 
+// Remove book function
+
 function removeBook(index) {
     if (index > -1) {
         myLibrary.splice(index, 1);
     };
 };
+
+// Dialog popup to add a book
 
 const addDialog = document.querySelector("dialog");
 const addButton = document.querySelector("#add__button");
