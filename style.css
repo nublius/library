@@ -171,3 +171,7 @@ label {
 input[type="text"], input[type="number"] {
     background-color: #BFBAA9;
 }
+
+#submit__container {
+    background-color: #b2aa94;
+}

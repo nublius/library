@@ -127,6 +127,8 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     formHandler();
+
+    addDialog.close();
 });
 
 function formHandler() {
