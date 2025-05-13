@@ -166,12 +166,28 @@ legend {
 label {
     font-size: 1.5rem;
     font-weight: 550;
+    margin-left: 5px;
 }
 
 input[type="text"], input[type="number"] {
     background-color: #BFBAA9;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
 }
 
 #submit__container {
     background-color: #b2aa94;
+    align-self: flex-start;
+    border-radius: 5px;
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #b2aa94;
 }
