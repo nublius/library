@@ -123,3 +123,11 @@ addButton.addEventListener("click", () => {
 closeDialog.addEventListener("click", () => {
     addDialog.close();
 });
+
+// Form submission handling
+
+const form = document.getElementById("addForm")
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+});
+
