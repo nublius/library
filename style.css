@@ -215,18 +215,19 @@ input[type="checkbox"] {
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: #2d2520;
+    border: 1px solid #b2aa94;
 }
 
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #b8b193;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #BFBAA9;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
