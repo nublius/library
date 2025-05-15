@@ -104,7 +104,7 @@ function loadBook(book) {
             removeBook(index);
             document.getElementById(book.id).remove();
         }
-    })
+    });
 
     newArticle.append(newArticleOptions);
 
@@ -144,6 +144,8 @@ function editBook(index) {
 
         const dialogInfo = document.querySelector(".dialog__info");
 
+        dialogInfo.innerHTML = "";
+
         const dialogAuthor = document.createElement("li");
         dialogAuthor.textContent = myLibrary[index].author;
         dialogInfo.append(dialogAuthor);
@@ -152,16 +154,28 @@ function editBook(index) {
         dialogPages.textContent = myLibrary[index].pages + " pages";
         dialogInfo.append(dialogPages);
 
+        const oldReadButton = dialogEditContainer.querySelector(".dialog__read");
+        if (oldReadButton) oldReadButton.remove();
+
         const dialogReadOrNot = document.createElement("button");
         dialogReadOrNot.className = "dialog__read";
-        if (myLibrary[index].readorNot == true) {
+        if (myLibrary[index].readOrNot === true) {
             dialogReadOrNot.textContent = "READ";
         } else {
             dialogReadOrNot.textContent = "NOT READ";
         }
         dialogEditContainer.append(dialogReadOrNot);
+
+        dialogReadOrNot.addEventListener("click", () => {
+            applyEdit(index);
+            if (myLibrary[index].readOrNot === true) {
+                dialogReadOrNot.textContent = "READ";
+            } else {
+                dialogReadOrNot.textContent = "NOT READ";
+            }
+        });
     };
-}
+};
 
 // Dialog popup to add a book
 const addDialog = document.querySelector(".add__dialog");
@@ -176,6 +190,23 @@ closeAddDialog.addEventListener("click", () => {
     addDialog.close();
 });
 
+// Dialog popup to edit a book
+const editDialog = document.querySelector(".edit__dialog");
+const closeEditDialog = document.querySelector("#close__edit__dialog");
+
+closeEditDialog.addEventListener("click", () => {
+
+    editDialog.close();
+});
+
+function applyEdit(index) {
+    if (myLibrary[index].readOrNot === true) {
+        myLibrary[index].readOrNot = false;
+    } else {
+        myLibrary[index].readOrNot = true;
+    };
+};
+
 // Form submission handling
 const form = document.getElementById("addForm")
 form.addEventListener('submit', (event) => {
@@ -185,14 +216,6 @@ form.addEventListener('submit', (event) => {
 
     addDialog.close();
 });
-
-// Dialog popup to edit a book
-const editDialog = document.querySelector(".edit__dialog");
-const closeEditDialog = document.querySelector("#close__edit__dialog");
-
-closeEditDialog.addEventListener("click", () => {
-    editDialog.close();
-})
 
 // Form value handling function
 function formHandler() {
