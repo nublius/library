@@ -170,12 +170,11 @@ function editBook(index) {
         dialogInfo.parentNode.insertBefore(dialogReadOrNot, dialogInfo.nextSibling);
 
         dialogReadOrNot.addEventListener("click", () => {
-            changeReadStatus(index);
-            if (myLibrary[index].readOrNot === true) {
-                dialogReadOrNot.textContent = "READ";
+            if (dialogReadOrNot.textContent === "READ") {
+                dialogReadOrNot.textContent = "NOT READ";
                 console.log(myLibrary[index].readOrNot);
             } else {
-                dialogReadOrNot.textContent = "NOT READ";
+                dialogReadOrNot.textContent = "READ";
                 console.log(myLibrary[index].readOrNot);
             }
         });
@@ -203,14 +202,6 @@ closeEditDialog.addEventListener("click", () => {
     editDialog.close();
 });
 
-function changeReadStatus(index) {
-    if (myLibrary[index].readOrNot === true) {
-        myLibrary[index].readOrNot = false;
-    } else {
-        myLibrary[index].readOrNot = true;
-    };
-};
-
 function applyEdit(index) {
     const mainContainer = document.querySelector(".main__container");
 
@@ -219,6 +210,13 @@ function applyEdit(index) {
     );
 
     if (!editedArticle) return; // fallback if not found
+
+    const editReadOrNot = document.querySelector(".dialog__read");
+    if (editReadOrNot.textContent === "READ") {
+        myLibrary[index].readOrNot = true;
+    } else {
+        myLibrary[index].readOrNot = false;
+    };
 
     const readStatusLi = editedArticle.querySelector("ul li:last-child");
     readStatusLi.textContent = myLibrary[index].readOrNot ? "Read" : "Not read";
