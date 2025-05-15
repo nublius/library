@@ -137,7 +137,10 @@ function removeBook(index) {
 // Edit book function
 function editBook(index) {
     if (index > -1) {
+
         const dialogEditContainer = document.querySelector(".article__container.edit");
+
+        dialogEditContainer.id = myLibrary[index].id;
 
         const dialogTitle = document.querySelector(".article__title.edit");
         dialogTitle.textContent = myLibrary[index].title;
@@ -164,14 +167,16 @@ function editBook(index) {
         } else {
             dialogReadOrNot.textContent = "NOT READ";
         }
-        dialogEditContainer.append(dialogReadOrNot);
+        dialogInfo.parentNode.insertBefore(dialogReadOrNot, dialogInfo.nextSibling);
 
         dialogReadOrNot.addEventListener("click", () => {
-            applyEdit(index);
+            changeReadStatus(index);
             if (myLibrary[index].readOrNot === true) {
                 dialogReadOrNot.textContent = "READ";
+                console.log(myLibrary[index].readOrNot);
             } else {
                 dialogReadOrNot.textContent = "NOT READ";
+                console.log(myLibrary[index].readOrNot);
             }
         });
     };
@@ -195,17 +200,36 @@ const editDialog = document.querySelector(".edit__dialog");
 const closeEditDialog = document.querySelector("#close__edit__dialog");
 
 closeEditDialog.addEventListener("click", () => {
-
     editDialog.close();
 });
 
-function applyEdit(index) {
+function changeReadStatus(index) {
     if (myLibrary[index].readOrNot === true) {
         myLibrary[index].readOrNot = false;
     } else {
         myLibrary[index].readOrNot = true;
     };
 };
+
+function applyEdit(index) {
+    const mainContainer = document.querySelector(".main__container");
+
+    const editedArticle = mainContainer.querySelector(
+        `.article__container[id="${myLibrary[index].id}"]`
+    );
+
+    if (!editedArticle) return; // fallback if not found
+
+    const readStatusLi = editedArticle.querySelector("ul li:last-child");
+    readStatusLi.textContent = myLibrary[index].readOrNot ? "Read" : "Not read";
+}
+
+const applyEditButton = document.querySelector(".submit__edit");
+applyEditButton.addEventListener("click", () => {
+    const id = document.querySelector(".article__container.edit").id;
+    applyEdit(findBook(id));
+    editDialog.close();
+});
 
 // Form submission handling
 const form = document.getElementById("addForm")
