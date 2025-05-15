@@ -286,3 +286,11 @@ button.submit__edit {
     height: 2rem;
     width: 2rem;
 }
+
+.article__title {
+    font-size: 2rem;
+}
+
+div.article__info>ul {
+    font-size: 1.3rem;
+}
