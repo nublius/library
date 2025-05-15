@@ -140,7 +140,7 @@ dialog::backdrop {
     flex-direction: column;
 }
 
-#close__dialog {
+#close__add__dialog, #close__edit__dialog {
     align-self: flex-end;
     background: none;
     padding-top: 3px;

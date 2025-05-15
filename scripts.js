@@ -74,6 +74,15 @@ function loadBook(book) {
 
     newArticleOptions.append(newArticleEdit);
 
+    newArticleEdit.addEventListener("click", () => {
+        // Replace this with whatever edit logic you want
+        const index = findBook(book.id);
+        if (index > -1) {
+            editBook(index);
+            editDialog.showModal();
+        }
+    });
+
     const newArticleDelete = document.createElement("button");
     newArticleDelete.className = "article__delete";
 
@@ -133,15 +142,15 @@ function editBook(index) {
 }
 
 // Dialog popup to add a book
-const addDialog = document.querySelector("dialog");
+const addDialog = document.querySelector(".add__dialog");
 const addButton = document.querySelector("#add__button");
-const closeDialog = document.querySelector("#close__dialog");
+const closeAddDialog = document.querySelector("#close__add__dialog");
 
 addButton.addEventListener("click", () => {
     addDialog.showModal();
 });
 
-closeDialog.addEventListener("click", () => {
+closeAddDialog.addEventListener("click", () => {
     addDialog.close();
 });
 
@@ -154,6 +163,14 @@ form.addEventListener('submit', (event) => {
 
     addDialog.close();
 });
+
+// Dialog popup to edit a book
+const editDialog = document.querySelector(".edit__dialog");
+const closeEditDialog = document.querySelector("#close__edit__dialog");
+
+closeEditDialog.addEventListener("click", () => {
+    editDialog.close();
+})
 
 function formHandler() {
     const title = form.title.value;
