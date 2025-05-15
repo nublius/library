@@ -74,8 +74,8 @@ function loadBook(book) {
 
     newArticleOptions.append(newArticleEdit);
 
+    // Edit book event listener
     newArticleEdit.addEventListener("click", () => {
-        // Replace this with whatever edit logic you want
         const index = findBook(book.id);
         if (index > -1) {
             editBook(index);
@@ -137,7 +137,29 @@ function removeBook(index) {
 // Edit book function
 function editBook(index) {
     if (index > -1) {
-        
+        const dialogEditContainer = document.querySelector(".article__container.edit");
+
+        const dialogTitle = document.querySelector(".article__title.edit");
+        dialogTitle.textContent = myLibrary[index].title;
+
+        const dialogInfo = document.querySelector(".dialog__info");
+
+        const dialogAuthor = document.createElement("li");
+        dialogAuthor.textContent = myLibrary[index].author;
+        dialogInfo.append(dialogAuthor);
+
+        const dialogPages = document.createElement("li");
+        dialogPages.textContent = myLibrary[index].pages + " pages";
+        dialogInfo.append(dialogPages);
+
+        const dialogReadOrNot = document.createElement("button");
+        dialogReadOrNot.className = "dialog__read";
+        if (myLibrary[index].readorNot == true) {
+            dialogReadOrNot.textContent = "READ";
+        } else {
+            dialogReadOrNot.textContent = "NOT READ";
+        }
+        dialogEditContainer.append(dialogReadOrNot);
     };
 }
 
@@ -172,6 +194,7 @@ closeEditDialog.addEventListener("click", () => {
     editDialog.close();
 })
 
+// Form value handling function
 function formHandler() {
     const title = form.title.value;
     const author = form.author.value;
